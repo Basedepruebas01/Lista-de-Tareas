@@ -1,0 +1,188 @@
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+   --white: #fafafb;
+   --purple: #9a67ea;
+   --blue-light: #04d4c3;
+   --blue-dark: #2a73c2;
+   --green: #2c7b90;
+}
+
+body {
+    background: linear-gradient(to bottom, var(--purple), var(--blue-light));
+    height: 100vh;   
+    font-family: 'Prompt', sans-serif;
+}
+
+.container {
+    max-width: 80%;
+    width: 400px;
+    height: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* PERFIL */
+.perfil h1 {
+    color: var(--white);
+}
+
+.perfil span {
+    color: var(--white);
+    letter-spacing: 1px;
+}
+
+#fecha {
+    color: var(--white);
+    padding: 50px 0 5px 0px;
+}
+
+/* AGREGAR TAREA */
+.agregar-tarea {
+    background-color: var(--white);
+    border-radius: 15px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    padding: 10px;
+    margin: 40px 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.agregar-tarea input {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--white);
+    padding-left: 10px;
+    outline: none;
+}
+.agregar-tarea input::placeholder {
+    font-size: 1.1rem;
+    color: var(--purple);
+}
+
+.agregar-tarea i {
+    font-size: 50px;
+    color: var(--purple);
+    transition: transform 0.2s ease, color 0.3s ease;
+}
+.agregar-tarea i:hover {
+    transform: scale(1.15);
+    color: var(--blue-dark);
+    cursor: pointer;
+}
+
+/* SECCIÓN DE TAREA */
+.seccion-tarea h3 {
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.seccion-tarea li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, var(--blue-dark), var(--green));
+    border-radius: 15px;
+    padding: 10px;
+    color: var(--white);
+    margin: 5px 0;
+    transition: transform 0.2s ease, opacity 0.3s ease;
+}
+.seccion-tarea li:hover {
+    transform: scale(1.02);
+}
+
+.seccion-tarea i {
+    font-size: 25px;
+    transition: color 0.3s ease;
+}
+
+.seccion-tarea > ul p {
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.seccion-tarea i:hover {
+    color: var(--blue-light);
+    cursor: pointer;
+}
+
+/* Tarea tachada */
+.line-through {
+    text-decoration: line-through;
+    color: var(--blue-light);
+    transition: color 0.3s ease;
+}
+
+/* Estilo especial para tareas completadas */
+.completada {
+    background: linear-gradient(to bottom, var(--blue-light), var(--green));
+    opacity: 0.85;
+}
+
+/* Animaciones */
+@keyframes slideInUpBounce {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(-5px) scale(1.02);
+    }
+    80% {
+        transform: translateY(2px) scale(0.98);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+.slide-in {
+    animation: slideInUpBounce 0.4s ease-out forwards;
+}
+
+@keyframes fadeOutRight {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(25px);
+    }
+}
+
+.fade-out {
+    animation: fadeOutRight 0.35s ease forwards;
+}
+
+@keyframes checkBounce {
+    0% { transform: scale(1); }
+    30% { transform: scale(1.25); }
+    60% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+.check-anim {
+    animation: checkBounce 0.3s ease;
+}
+
+/* Icono verde con resplandor */
+.icono-verde {
+    color: #00ff7f;
+    text-shadow: 0 0 8px rgba(0, 255, 127, 0.8),
+                 0 0 15px rgba(0, 255, 127, 0.6);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
